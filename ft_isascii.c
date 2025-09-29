@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 22:31:49 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/29 23:26:03 by sergio-alej      ###   ########.fr       */
+/*   Created: 2025/09/29 23:36:32 by sergio-alej       #+#    #+#             */
+/*   Updated: 2025/09/29 23:46:54 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// checks for a digit (0 through 9).
-// #include <stdio.h>
-// #include <unistd.h>
-// #include <ctype.h>
+// checks whether c is a 7-bit unsigned char value that fits into the ASCII character set.
+#include <stdio.h>
+#include <unistd.h>
+#include <ctype.h>
 
-int ft_isdigit(char number){
-    if (number > '0' && number < '9'){
-        return 0;
+int ft_isascii(char character){
+    if (character >=0 && character<=127){
+        return 42;
     }
-    return 1024;
+    return 0;
 }
 
-/* int main(void){
-    
-} */

@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 22:31:49 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/29 23:26:03 by sergio-alej      ###   ########.fr       */
+/*   Created: 2025/09/29 23:47:20 by sergio-alej       #+#    #+#             */
+/*   Updated: 2025/09/29 23:48:44 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// checks for a digit (0 through 9).
-// #include <stdio.h>
-// #include <unistd.h>
-// #include <ctype.h>
-
-int ft_isdigit(char number){
-    if (number > '0' && number < '9'){
-        return 0;
+int ft_isprint(char character){
+    if (character >=32 &&  character <=127){
+        return 42;
     }
-    return 1024;
+    return 0;
 }
-
-/* int main(void){
-    
-} */

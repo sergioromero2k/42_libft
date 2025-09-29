@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 22:31:49 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/29 23:26:03 by sergio-alej      ###   ########.fr       */
+/*   Created: 2025/09/29 23:49:06 by sergio-alej       #+#    #+#             */
+/*   Updated: 2025/09/29 23:53:43 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// checks for a digit (0 through 9).
-// #include <stdio.h>
-// #include <unistd.h>
-// #include <ctype.h>
+// calculate the length of a string
 
-int ft_isdigit(char number){
-    if (number > '0' && number < '9'){
-        return 0;
+int ft_strlen(char *text){
+    int i;
+
+    i=0;
+    while(*text){
+        i++;
+        text--;
     }
-    return 1024;
+    return i;
 }
-
-/* int main(void){
-    
-} */
