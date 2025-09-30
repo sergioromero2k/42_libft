@@ -17,3 +17,4 @@ Cuando corres un programa en C, la memoria del proceso se divide en varias zonas
 ### 4. Stack (pila)
 * Aquí se guardan variables locales y las llamadas a funciones.
 * Es manejado automáticamente: cuando entras a una función se reservan varibales locales, cuando sales se liberan.
+
