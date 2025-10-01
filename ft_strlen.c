@@ -6,19 +6,19 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 23:49:06 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/29 23:53:43 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/01 17:52:53 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // calculate the length of a string
 
-int ft_strlen(char *text){
-    int i;
+#include "libft.h"
+
+size_t ft_strlen(const char *s){
+    size_t i;
 
     i=0;
-    while(*text){
+    while(s[i])
         i++;
-        text--;
-    }
     return i;
 }

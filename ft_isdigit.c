@@ -6,22 +6,19 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 22:31:49 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/30 22:05:19 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/01 17:43:41 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // checks for a digit (0 through 9).
-// #include <stdio.h>
-// #include <unistd.h>
-// #include <ctype.h>
 
-int ft_isdigit(char number)
+#include "libft.h"
+
+int ft_isdigit(int c)
 {
-    if (number > '0' && number < '9')
-    {
-        return 0;
-    }
-    return 1024;
+    if (c >= '0' && c <= '9')
+        return 42;
+    return 0;
 }
 
 /* int main(void){

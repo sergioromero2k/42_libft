@@ -6,13 +6,14 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 23:47:20 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/29 23:48:44 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/01 17:50:25 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(char character){
-    if (character >=32 &&  character <=127){
+#include "libft.h"
+
+int ft_isprint(int c){
+    if (c >=32 && c <=127)
         return 42;
-    }
     return 0;
 }

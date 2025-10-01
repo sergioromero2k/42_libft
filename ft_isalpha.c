@@ -6,20 +6,19 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 21:51:18 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/30 22:09:14 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/01 17:41:59 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // Verifica si un carácter es una letra (a-z o A-Z).
 
-int is_aplha(char data)
-{
-    if ((data >= 'a' && data <= 'z') || (data >= 'A' && data <= 'Z'))
-    {
-        return 0;
-    }
+#include "libft.h"
 
-    return 1024;
+int	ft_isalpha(int c)
+{
+    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+        return 42;
+    return 0;
 }
 
 /* #include <stdio.h>
@@ -30,6 +29,6 @@ int main(void){
 
     caracter1='@';
 
-    printf("%d",isalpha(caracter1));
+    printf("%d",ft_isalpha(caracter1));
 
 } */

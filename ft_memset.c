@@ -12,9 +12,9 @@
 
 // fill memory with a constant byte
 
-#include <stdlib.h>
+#include "libft.h"
 
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 
     unsigned char *pr;
@@ -25,10 +25,7 @@ void *ft_memset(void *s, int c, size_t n)
     return s;
 }
 
-#include <stdio.h>
-#include <string.h>
-
-int main(void)
+/* int main(void)
 {
     char text[] = "Hola pepe jojojojo";
     char text_mem[] = "Hola pepe jojojojo";
@@ -42,15 +39,4 @@ int main(void)
     // ft_memset
     ft_memset(text, '.', 5);
     printf("%s", text);
-}
-
-/* #include <stdio.h>
-#include <string.h>
-
-int main(){
-    char str[50] = "GeeksForGeeks is for programming geeks.";
-
-    memset(str+13, '.',8*sizeof(char));
-    printf("%s",str);
-
 } */
