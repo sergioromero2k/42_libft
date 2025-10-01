@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 21:51:18 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/30 22:09:14 by sergio-alej      ###   ########.fr       */
+/*   Created: 2025/09/30 20:42:21 by sergio-alej       #+#    #+#             */
+/*   Updated: 2025/09/30 22:05:04 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Verifica si un carácter es una letra (a-z o A-Z).
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
 
-int is_aplha(char data)
+int tolower(int c)
 {
-    if ((data >= 'a' && data <= 'z') || (data >= 'A' && data <= 'Z'))
-    {
-        return 0;
-    }
-
-    return 1024;
+    if (c < 65 && c > 90)
+        return c;
+    return c + 32;
 }
 
-/* #include <stdio.h>
-#include <ctype.h>
+/* int main(void){
+    char letter='A';
 
-int main(void){
-    char caracter1;
-
-    caracter1='@';
-
-    printf("%d",isalpha(caracter1));
-
+    printf("%c",tolower(letter));
 } */

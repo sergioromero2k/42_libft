@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 21:51:18 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/30 22:09:14 by sergio-alej      ###   ########.fr       */
+/*   Created: 2025/09/30 20:21:29 by sergio-alej       #+#    #+#             */
+/*   Updated: 2025/09/30 20:42:19 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Verifica si un carácter es una letra (a-z o A-Z).
+#include <ctype.h>
+#include <stdio.h>
 
-int is_aplha(char data)
-{
-    if ((data >= 'a' && data <= 'z') || (data >= 'A' && data <= 'Z'))
-    {
-        return 0;
-    }
+// Convierte un caracter minusculas a su equivalente mauscula, y si el caracter ya es mayuscula o no es una letra,
+// devuelve el carácter sin cambios.
 
-    return 1024;
+int toupper(int c){
+
+    if(c>='a' && c<='z')
+        c=c-32;
+    return (char)c;
 }
 
-/* #include <stdio.h>
-#include <ctype.h>
-
-int main(void){
-    char caracter1;
-
-    caracter1='@';
-
-    printf("%d",isalpha(caracter1));
-
+/* int main(void){
+    char letter='a';
+    
+    printf("%c",toupper(letter));
 } */

@@ -1,0 +1,7 @@
+# Ignorar todos los archivos de configuración locales
+*.env
+
+# Ignorar todos los archivos log
+*.log
+
+.vscode

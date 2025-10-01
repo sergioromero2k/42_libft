@@ -14,35 +14,35 @@
 
 #include <stdlib.h>
 
-void *ft_memset(void *s, int c, size_t n){
+void *ft_memset(void *s, int c, size_t n)
+{
 
     unsigned char *pr;
 
-    pr=(unsigned char *)s;
-    while(n--)
-        *pr++=(unsigned char)c;
+    pr = (unsigned char *)s;
+    while (n--)
+        *pr++ = (unsigned char)c;
     return s;
 }
 
 #include <stdio.h>
 #include <string.h>
 
-int main(void){
-    char text[]="Hola pepe jojojojo";
-    char text_mem[]="Hola pepe jojojojo";
+int main(void)
+{
+    char text[] = "Hola pepe jojojojo";
+    char text_mem[] = "Hola pepe jojojojo";
 
     // memset
-    memset(text_mem,'.',5);
+    memset(text_mem, '.', 5);
 
-    printf("%s",text_mem);
+    printf("%s", text_mem);
     printf("\n");
 
     // ft_memset
-    ft_memset(text,'.',5);
+    ft_memset(text, '.', 5);
     printf("%s", text);
-    
 }
-
 
 /* #include <stdio.h>
 #include <string.h>
@@ -52,8 +52,5 @@ int main(){
 
     memset(str+13, '.',8*sizeof(char));
     printf("%s",str);
-    
+
 } */
-
-
-    

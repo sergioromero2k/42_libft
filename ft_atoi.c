@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 21:51:18 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/30 22:09:14 by sergio-alej      ###   ########.fr       */
+/*   Created: 2025/09/30 23:24:23 by sergio-alej       #+#    #+#             */
+/*   Updated: 2025/10/01 16:39:10 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Verifica si un carácter es una letra (a-z o A-Z).
-
-int is_aplha(char data)
+int ft_atoi(const char *ptr)
 {
-    if ((data >= 'a' && data <= 'z') || (data >= 'A' && data <= 'Z'))
-    {
-        return 0;
-    }
+	int i;
+	int sign;
+	int res;
 
-    return 1024;
+	i = 0;
+	sign = 1;
+	res = 0;
+	while ((ptr[i] == ' ') || ((ptr[i] >= 9) && (ptr[i] <= 13)))
+		i++;
+	if ((ptr[i] == '+') || (ptr[i] == '-'))
+	{
+		if (ptr[i] == '-')
+			sign = -sign;
+		i++;
+	}
+	while ((ptr[i] >= '0') && (ptr[i] <= '9'))
+	{
+		res = res * 10 + ptr[i] - '0';
+		i++;
+	}
+	return (res * sign);
 }
-
-/* #include <stdio.h>
-#include <ctype.h>
-
-int main(void){
-    char caracter1;
-
-    caracter1='@';
-
-    printf("%d",isalpha(caracter1));
-
-} */
