@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 15:44:19 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/30 22:06:04 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/01 18:00:35 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 // Copia un bloque de memoria de ubicación de origen
 // ¿Cuando hay solapamiento? Cuando el bugger de origen es menor que el buffer de destino.
 
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
     unsigned char *des;
 

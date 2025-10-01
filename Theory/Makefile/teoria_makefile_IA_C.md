@@ -22,6 +22,36 @@ $(TARGET): $(OBJS) $(CC) $(OBJS) -o $(TARGET)
 clean:
 	rm -f $(OBJS) $(TARGET)
 ```
+### Usando variables y comodines
+```makefile
+CC = gcc
+CFLAGS = -Wall -g
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+EXEC = programa
+
+all: $(EXEC)
+
+$(EXEC): $(OBJ)
+    $(CC) $(CFLAGS) -o $@ $^
+
+%.o: %.c
+    $(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+    rm -f *.o $(EXEC)
+```
+
+* `wildcard *.c` → toma todos los .c del directorio.
+* `$(SRC:.c=.o)` → reemplaza .c por .o para generar la lista de objetos.
+* `%.o: %.c` → regla genérica para compilar cualquier .c a .o.
+* `$@` → objetivo.
+* `$^` → todas las dependencias.
+* `$<` → primera dependencia.
+
+
+
+
 ### Componentes Clave
 * **TARGET**: El nombre del programa a generar.
 * **CC**: El compilador (por ejemplo, gcc).

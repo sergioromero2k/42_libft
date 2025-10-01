@@ -6,17 +6,15 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 20:42:21 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/30 22:05:04 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/01 18:53:05 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
-#include <stdlib.h>
+#include "libft.h"
 
-int tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c < 65 && c > 90)
+    if (c < 65 && c > 90) // Esto era probar
         return c;
     return c + 32;
 }

@@ -6,37 +6,41 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 18:58:29 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/30 22:06:08 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/01 18:26:18 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 // strlcpy : "String Length Copy"
 // strlcpy : "Copiar Longitud de Cadena"
 // Devuelve la cantidad de total de la cadena
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+/*
+* Es una función de C que copia una cadena origen (src) a un búfer destino (dst), copiando hasta size-1 y garantizando que el resultado este siempre terminado con un carácter nulo (\0).
+* Esto es para eviar dsbordamientos y devolver la longitud total de la cadena que debería haberse copiado si hubiera espacio ilimitado.
+* size = tamaño total del buffer dst.
+* Debes tener en cuenta que siempre copia hasta \0 al final.
+*/
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
     size_t i;
-    size_t count_src;
+    size_t len_src;
 
     i = 0;
-    count_src = 0;
+    len_src = ft_strlen(src);
 
-    while (i < size)
+    if(size<=0)
+        return ft_strlen(src);
+
+    while ((i < size-1) && (src[i]))
     {
         dst[i] = src[i];
         i++;
     }
-    *dst = '\0';
-
-    while (src[count_src] != '\0')
-        count_src++;
-
-    return count_src;
+    dst[i] = '\0';
+    return len_src;
 }
 
 /* int main(void)

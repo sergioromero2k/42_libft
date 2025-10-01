@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:57:39 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/01 11:57:57 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/01 22:03:07 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char * ft_strnstr (const char *big,	const char *little, size_t len){
     return NULL;
 }
 
-int main(void){
+/* int main(void){
     const char big[]="Hola mmundo";
     const char little[]="ola";
 
@@ -47,4 +47,4 @@ int main(void){
     char *ptr=strnstr(big,little,4);
     printf("%p",ptr_ft);
     printf("%p",ptr);
-}
+} */

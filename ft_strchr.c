@@ -6,14 +6,11 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 20:52:58 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/30 22:06:00 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/01 20:04:03 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
+#include "libft.h"
 
 /*
  * Retorna un puntero a la primera ocurrencia del 'c'.
@@ -22,20 +19,17 @@
  * El calificador de const del argumento de entrada.
  */
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
+    if ((unsigned char)c == '\0')
+        return (char *)s;
+    
     while (*s)
     {
-        if (*s == (char)c)
-        {
+        if (*s == (unsigned char)c)
             return (char *)s;
-        }
         s++;
     }
-
-    if ((char)c == '\0')
-        return (char *)s;
-
     return NULL;
 }
 // int main(void){

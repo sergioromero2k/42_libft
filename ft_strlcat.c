@@ -6,35 +6,46 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 19:37:25 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/09/30 20:21:25 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/01 22:01:27 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int ft_len(char *str){
-    int i;
+/*
+* Concatena una cadena de origen (`src`) al final de una cadena de destino (`dst`), de forma segura al incluir el tamaño del búfer de destino para evitar desbordamientos de memoria.
+* Devuelve la longitud que la cadena resultatne habría tenido con espacios ilimitado, lo que permite determinar si el destino era demasiado pequeño para contener toda la cadena.
+* Tener en cuenta que esto no necesariamente es la longitud que realmente cabe en dst, ya que si no cumple si o si te devolvera la cadena.
+*/
 
-    i=0;
-    while(str[i])
-        i++;
-    return i;
-}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size){
         size_t i;
         size_t dst_len;
         size_t src_len;
 
-        i=0;
-        dst_len=ft_len(dst);
-        src_len=ft_len(src);
+        dst_len=ft_strlen(dst);
+        src_len=ft_strlen(src);
 
-        while(src[i]<size && src[i]){
+        if (dst_len>=size)  
+            return (dst_len+src_len);
+
+        i=0;
+        while(i<(size-1) && src[i]){
             dst[dst_len+i]=src[i];
-            i++
+            i++;
         }
         dst[dst_len+i]='\0';
         return (dst_len+src_len);
 }
+
+/* int main(void){
+    char dst[8] = "Hola";   // tamaño total 8
+    char src[] = "Mundo";
+
+    size_t len = strlcat(dst, src, sizeof(dst));
+
+    printf("dst: %s\n", dst); // "HolaMun" -> truncado MALLL
+    printf("len: %zu\n", len); // 9 -> longitud que habría tenido si hubiera espacio suficientes, zu el es tipo de para printf
+} */
 
