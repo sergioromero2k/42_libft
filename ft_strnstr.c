@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 01:58:32 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/02 02:24:30 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/02 07:42:39 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len){
     return NULL;
 }
 
-int main() {
+/* int main() {
     // const char *text = "hola mundo";
     // const char *needle = "mun";
     const char *ft_text = "hola mundo";
@@ -47,4 +47,4 @@ int main() {
     printf("%p",ft_res);
 
     return 0;
-}
+} */

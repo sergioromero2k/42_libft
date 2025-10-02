@@ -6,9 +6,18 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:24:23 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/01 16:39:10 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/02 07:51:09 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Convert a string a to an integer
+/*
+* Es una función de programación que convierte una cadena de caracteres que contiene un número a su representación entera.
+* Es decir, toma un texto "123" y lo transforma en el número entero 123, que luego se puede usar en operaciones matemáticas.
+* Devuelve un número entero correspondiente.
+*/
+
+#include "libft.h"
 
 int ft_atoi(const char *ptr)
 {
@@ -34,3 +43,14 @@ int ft_atoi(const char *ptr)
 	}
 	return (res * sign);
 }
+/* int main(void) {
+    char cadena_numero[] = "-2147483648"; // La cadena que queremos convertir
+    int numero_entero;
+
+    // Usamos atoi para convertir la cadena a entero
+    numero_entero = ft_atoi(cadena_numero);
+
+    printf("La cadena es: \"%s\"\n", cadena_numero);
+    printf("El número entero es: %d\n", numero_entero);
+    return 0;
+} */
