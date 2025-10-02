@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 23:49:06 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/01 17:52:53 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/02 20:58:24 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s){
-    size_t i;
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
 
-    i=0;
-    while(s[i])
-        i++;
-    return i;
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

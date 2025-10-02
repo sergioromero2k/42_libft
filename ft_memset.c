@@ -4,7 +4,8 @@
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#s+   +#+           */
+/*                                                +#+#+#+#+#s+  
+	+#+           */
 /*   Created: 2025/09/30 07:05:30 by sergio-alej       #+#    #+#             */
 /*   Updated: 2025/09/30 08:16:41 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
@@ -16,27 +17,26 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
+	unsigned char	*pr;
 
-    unsigned char *pr;
-
-    pr = (unsigned char *)s;
-    while (n--)
-        *pr++ = (unsigned char)c;
-    return s;
+	pr = (unsigned char *)s;
+	while (n--)
+		*pr++ = (unsigned char)c;
+	return (s);
 }
 
 /* int main(void)
 {
-    char text[] = "Hola pepe jojojojo";
-    char text_mem[] = "Hola pepe jojojojo";
+	char text[] = "Hola pepe jojojojo";
+	char text_mem[] = "Hola pepe jojojojo";
 
-    // memset
-    memset(text_mem, '.', 5);
+	// memset
+	memset(text_mem, '.', 5);
 
-    printf("%s", text_mem);
-    printf("\n");
+	printf("%s", text_mem);
+	printf("\n");
 
-    // ft_memset
-    ft_memset(text, '.', 5);
-    printf("%s", text);
+	// ft_memset
+	ft_memset(text, '.', 5);
+	printf("%s", text);
 } */
