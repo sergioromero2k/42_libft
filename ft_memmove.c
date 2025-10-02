@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:58:35 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/02 09:00:33 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/02 09:03:10 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void *ft_memmove(void *dest, const void *src, size_t n)
     }
     return dest;
 }
-
+/* 
 int main(void) {
     char str[] = "ABCDEFG";
     char ft_str[] = "ABCDEFG";
@@ -56,8 +56,7 @@ int main(void) {
     ft_memmove(ft_str + 2, ft_str, 5);  // Copiamos "ABCDE" empezando en str+2
     printf("%s\n", ft_str);             // Output: "ABABCDE"
     return 0;
-}
+} */
 
-    // printf("%s\n",ft_buffer);
 
 
