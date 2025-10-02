@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:03:10 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/02 21:04:19 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/02 23:32:21 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,18 @@ void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 
 // Part 2
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
 
 /*
-Es un identificador único que el preprocesador 
+Es un identificador único que el preprocesador
 usa para saber si ese archivo ya fue incluido.
 
-En C es conveción escribir los macros 
+En C es conveción escribir los macros
 (definiciones de preprocesador) en mayúsculas,
 
 para distinguirlas de variables,
