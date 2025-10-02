@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 20:52:58 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/01 20:04:03 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/02 00:28:02 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,15 @@ char	*ft_strchr(const char *s, int c)
     }
     return NULL;
 }
-// int main(void){
+/* int main(void){
 
-//     char s[]="Hola mundo";
-//     char search='a';
+    char s[]="Hola mundo";
+    char search='a';
 
-//     char *ptr=(ft_strchr(s,search));
-//     printf("%p",ptr);
-// }
+    char *ft_ptr=(ft_strchr(s,search));
+    char *ptr=(ft_strchr(s,search));
+
+    printf("%p\n",ft_ptr);
+    printf("%p",ptr);
+
+} */

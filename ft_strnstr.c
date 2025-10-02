@@ -5,46 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 23:57:39 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/01 22:03:07 by sergio-alej      ###   ########.fr       */
+/*   Created: 2025/10/02 01:58:32 by sergio-alej       #+#    #+#             */
+/*   Updated: 2025/10/02 02:24:30 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <ctype.h>
-#include <string.h> // Librería necesaria para strstr
+#include "libft.h"
 
-// locate a substring in a string
-/* 
-* Busca una subcadena dentro de una cadena principal, pero solo hasta un número máximo de caracteres (n) especificado. 
-* Si encuentra la subcadena dentro de esa porción limitada de la cadena principal, devuelve un puntero al primer carácter de la aparición. 
-* Si la subcadena no se encuentra o la sucadena es vacía, devuelve  NULL (o string1 en algunos casos).
-*/
-char * ft_strnstr (const char *big,	const char *little, size_t len){
+char *ft_strnstr(const char *haystack, const char *needle, size_t len){
     size_t i;
-    size_t result;
+    size_t len_needle;
+    size_t count;
 
     i=0;
-    while(*big && *little && (i<len)){
-        if(*big==*little)
-            result++;
-        big++;
-        little++;
+    len_needle=ft_strlen(needle);
+    count=0;
+    
+    while(i<len){
+        if(haystack[i]==needle[i]){
+            count++;
+        }else{
+            if(count==len_needle)
+                return (char *)&(needle[i-len_needle]);
+            count=0;
+        }
         i++;
-    }  
-    if (result == len)
-        return (char *)big;
+    }
     return NULL;
 }
 
-/* int main(void){
-    const char big[]="Hola mmundo";
-    const char little[]="ola";
+int main() {
+    // const char *text = "hola mundo";
+    // const char *needle = "mun";
+    const char *ft_text = "hola mundo";
+    const char *ft_needle = "mun";
 
-    char *ptr_ft=ft_strnstr(big,little,4);
-    char *ptr=strnstr(big,little,4);
-    printf("%p",ptr_ft);
-    printf("%p",ptr);
-} */
+    // char *res = strnstr(text, needle, 11); // len >= longitud de text
+    char *ft_res = ft_strnstr(ft_text, ft_needle, 11); // len >= longitud de text
+
+    // printf("%p",res);
+    printf("%p",ft_res);
+
+    return 0;
+}
