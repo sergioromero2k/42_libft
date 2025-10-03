@@ -6,13 +6,34 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 20:31:26 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/02 23:14:16 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/03 18:35:08 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int ft_remstart(const char *s, int c){
+	while(*s == (unsigned char)c){
+		s++;
+		return 1;
+	}
+	return 0;
+}
 
+static int ft_strcount(const char *s, int c){
+	size_t i;
+	size_t count;
+
+	i=0;	
+	count=0;
+	while(s[count]){
+		if (ft_remstart(*s,c))
+			i++;
+		count++;
+	}
+	return i;
+}
+// ,,,aidadia,da,,,,ad,adaddd,dadd,,,,,,,,
 
 char	**ft_split(char const *s, char c)
 {
@@ -25,7 +46,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 
-    arr=(char **)malloc(n*sizeof(char *));
+    arr=(char **)malloc(i*sizeof(char *));
 	while (s[j])
 	{
 		if (ft_strchr(s, (unsigned char)c))
