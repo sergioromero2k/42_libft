@@ -6,75 +6,92 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 20:31:26 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/03 18:35:08 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/04 09:20:57 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_remstart(const char *s, int c){
-	while(*s == (unsigned char)c){
-		s++;
-		return 1;
+static int	ft_count_words(const char *s, int c)
+{
+	size_t	i;
+	size_t	count_words;
+
+	i = 0;
+	count_words = 0;
+	while (s[i])
+	{
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
+			count_words++;
+		i++;
 	}
-	return 0;
+	return (count_words);
+}
+// aidadia,da,,,,ad,adaddd,dadd,,,,,,,,
+
+static int	ft_count_one_word(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	return (i);
 }
 
-static int ft_strcount(const char *s, int c){
-	size_t i;
-	size_t count;
+static char	**ft_free(char **s, int n)
+{
+	int	i;
 
-	i=0;	
-	count=0;
-	while(s[count]){
-		if (ft_remstart(*s,c))
-			i++;
-		count++;
+	i = 0;
+	while (i < n)
+	{
+		free(s[i]);
+		s[i] = NULL;
+		i++;
 	}
-	return i;
+	free(s);
+	return (NULL);
 }
-// ,,,aidadia,da,,,,ad,adaddd,dadd,,,,,,,,
 
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
-
-	// b=*a
-	char *(*arr);
+	char	**arr;
 
 	i = 0;
 	j = 0;
-
-    arr=(char **)malloc(i*sizeof(char *));
-	while (s[j])
+	arr = (char **)ft_calloc(sizeof(char *), ft_count_words(s, c) + 1);
+	if (!s || !arr)
+		return (NULL);
+	while (s[i])
 	{
-		if (ft_strchr(s, (unsigned char)c))
+		if (s[i] != c)
 		{
-			arr[i][j] = '\0';
-			i++;
+			arr[j] = ft_substr(s, i, ft_count_one_word(&s[i], c));
+			if (!arr[j])
+				return (ft_free(arr, j));
+			j++;
+			i += ft_count_one_word(&s[i], c);
 		}
 		else
-		{
-			arr[i][j] = s[j];
-		}
-		j++;
+			i++;
 	}
 	return (arr);
 }
 
-void	main(void)
+/* int	main(void)
 {
-	char	texto[] = "uno,dos,tres";
-	char	**arr;
+	char	arr[] = "ola tudo bem ?";
+	char	**arr_new;
 
-	arr = ft_split(texto, ',');
-	while (*arr)
-	{
-		printf("String completo: %s\n", *arr);
-		printf("Primer caracter: %c\n", **arr);
-	}
-}
+	arr_new = ft_split(arr, ' ');
+	printf("%s", arr_new[0]);
+	printf("%s", arr_new[1]);
+	printf("%s", arr_new[2]);
+	printf("%s", arr_new[3]);
+} */
 
 /*
 En C nativo, no existe una función split() integrada
