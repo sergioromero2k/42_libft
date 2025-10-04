@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
+/*   By: serromer <serromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 19:40:40 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/02 21:21:47 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/04 12:22:02 by serromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,23 @@ char	*ft_strtrim(char const *s, char const *set)
 	while (end > start && ft_strchr(set, s[end - 1]))
 		end--;
 	len_total = end - start;
-	result = (char *)malloc(len_total + 1);
+	result = (char *)ft_calloc(sizeof(char), (len_total + 1));
 	if (!result)
 		return (NULL);
 	ft_strlcpy(result, s + start, len_total + 1);
 	return (result);
 }
-/* int main() {
-	char *s = "   *zzzzz*Hola mundozzzz**   ";
-	char *set = " *oz";
-	char *result = ft_strtrim(s, set);
+/* int	main(void)
+{
+	char	*s;
+	char	*set;
+	char	*result;
 
-	if (result) {
+	s = "   *zzzzz*Hola mundozzzz**   ";
+	set = " *z";
+	result = ft_strtrim(s, set);
+	if (result)
+	{
 		printf("'%s'\n", result); // 'Hola mundo'
 		free(result);
 	}
