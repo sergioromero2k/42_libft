@@ -6,7 +6,7 @@
 /*   By: serromer <serromer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 23:24:23 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/04 12:12:01 by serromer         ###   ########.fr       */
+/*   Updated: 2025/10/04 12:22:29 by serromer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_atoi(const char *ptr)
 	{
 		if (result > INT_MAX || result < INT_MIN)
 			return (0);
-		result = result * 10 + ptr[i] - '0';	// Al principio vale 0.
+		result = result * 10 + ptr[i] - '0';
 		i++;
 	}
 	return (result * sign);
