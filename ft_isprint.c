@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 23:47:20 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/02 21:17:57 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/08 20:30:12 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 127)
+	if (c >= 32 && c < 127)
 		return (42);
 	return (0);
 }
+// ? Atento a el 127, puede ser 126..

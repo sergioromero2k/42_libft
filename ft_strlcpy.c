@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 18:58:29 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/02 21:19:21 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/08 20:42:59 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 // strlcpy : "String Length Copy"
 // strlcpy : "Copiar Longitud de Cadena"
 // Devuelve la cantidad de total de la cadena
+// Si no hay size, retorna size if (size <= 0)
+// size-1, porque el ultimo vale \0 while ((i < size - 1) && (src[i]))
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -24,7 +26,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	i = 0;
 	len_src = ft_strlen(src);
 	if (size <= 0)
-		return (ft_strlen(src));
+		return (len_src);
 	while ((i < size - 1) && (src[i]))
 	{
 		dst[i] = src[i];
@@ -54,12 +56,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 } */
 /*
-* Es una función de C que copia una cadena 
+* Es una función de C que copia una cadena
 origen (src) a un búfer destino (dst),
-copiando hasta size-1 y garantizando que el 
+copiando hasta size-1 y garantizando que el
 resultado este siempre terminado con un carácter nulo (\0).
 
-* Esto es para evitar dsbordamientos y devolver la longitud 
+* Esto es para evitar dsbordamientos y devolver la longitud
 total de la cadena que debería haberse copiado si hubiera espacio ilimitado.
 * size = tamaño total del buffer dst.
 * Debes tener en cuenta que siempre copia hasta \0 al final.

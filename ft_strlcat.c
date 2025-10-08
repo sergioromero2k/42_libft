@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 19:37:25 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/02 21:12:41 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/08 21:25:07 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,26 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 	size_t	dst_len;
 	size_t	src_len;
+	size_t	result;
 
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
-	if (dst_len >= size)
-		return (dst_len + src_len);
+	result = 0;
+	if (size == 0)
+		return (src_len);
+	if (size > dst_len)
+		result = dst_len + src_len;
+	else
+		result = src_len + size;
 	i = 0;
-	while (i < (size - 1) && src[i])
+	while (src[i] && dst_len <= size)
 	{
-		dst[dst_len + i] = src[i];
+		dst[dst_len] = src[i];
+		dst_len++;
 		i++;
 	}
-	dst[dst_len + i] = '\0';
-	return (dst_len + src_len);
+	dst[dst_len] = '\0';
+	return (result);
 }
 
 /* int main(void){
@@ -44,17 +51,17 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		zu el es tipo de para printf
 } */
 /*
-	* Concatena una cadena de origen (`src`) 
-    al final de una cadena de destino (`dst`),
-	de forma segura al incluir el tamaño del búfer 
-    de destino para evitar desbordamientos de memoria.
+	* Concatena una cadena de origen (`src`)
+	al final de una cadena de destino (`dst`),
+	de forma segura al incluir el tamaño del búfer
+	de destino para evitar desbordamientos de memoria.
 
-	* Devuelve la longitud que la cadena resultante 
-    habría tenido con espacios ilimitado,
-	lo que permite determinar si el destino era 
-    demasiado pequeño para contener toda la cadena.
+	* Devuelve la longitud que la cadena resultante
+	habría tenido con espacios ilimitado,
+	lo que permite determinar si el destino era
+	demasiado pequeño para contener toda la cadena.
 
-	* Tener en cuenta que esto no necesariamente 
-    es la longitud que realmente cabe en dst,
+	* Tener en cuenta que esto no necesariamente
+	es la longitud que realmente cabe en dst,
 	ya que si no cumple si o si te devolvera la cadena.
  */

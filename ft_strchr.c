@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 20:52:58 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/03 21:58:52 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/08 22:13:50 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if ((unsigned char)c == '\0')
-		return ((char *)s);
+		
 	while (*s)
 	{
 		if (*s == (unsigned char)c)
 			return ((char *)s);
 		s++;
 	}
+	if ((unsigned char)c == '\0')
+		return ((char *)s);
+		
 	return (NULL);
 }
 /* int main(void){

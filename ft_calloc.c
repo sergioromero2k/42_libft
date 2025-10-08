@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 10:21:50 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/02 21:05:57 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/08 22:30:01 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,12 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void			*ptr;
-	size_t			i;
-	unsigned char	*p;
+	void	*ptr;
 
-	ptr = (void *)malloc(nmemb * size);
+	ptr = malloc(nmemb * size);
 	if (ptr == NULL)
-		return (NULL);
-	i = 0;
-	p = ptr;
-	while (i < nmemb * size)
-	{
-		p[i] = 0;
-		i++;
-	}
+		return (ptr);
+	ft_bzero(ptr, size * nmemb);
 	return (ptr);
 }
 /*

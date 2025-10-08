@@ -1,2 +1,0 @@
- ### Puntero genérico
- ---
