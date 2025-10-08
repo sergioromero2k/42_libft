@@ -1,2 +1,3 @@
-# 42madrid_common_core
-Repository of common core of 42madrid
+# 42_libft
+Repository of the common core of 42madrid
+
