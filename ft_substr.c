@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 17:37:42 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/02 21:16:48 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/09 17:23:07 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,29 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	j;
-	size_t			len_s;
-	char			*str;
+	size_t	i;
+	size_t	len_s;
+	char	*str;
 
-	len_s = ft_strlen(s);
-	str = (char *)malloc(len * (sizeof(char)) + 1);
-	if (!str || (len > len_s))
+	if (!s)
 		return (NULL);
-	j = 0;
-	while (j < len)
+	len_s = ft_strlen(s);
+	if (start >= len_s)
+		return (ft_calloc(1, 1));
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	str = (char *)malloc((len + 1) * (sizeof(char)));
+	if (!str)
+		return (NULL);
+	if (len_s - start < len)
+		len = len_s - start;
+	i = 0;
+	while (i < len && s[start + i])
 	{
-		str[j] = s[start];
-		j++;
-		start++;
+		str[i] = s[start + i];
+		i++;
 	}
-	str[j] = '\0';
+	str[i] = '\0';
 	return (str);
 }
 
@@ -46,9 +53,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (0);
 } */
 /*
-* En C puro no existe una función estándar 
+* En C puro no existe una función estándar
 llamada `substr` como tal (esa es común en C++,Java, PHP, etc.).
-* Pero a menudo uno mismo implementa un función con 
+* Pero a menudo uno mismo implementa un función con
 ese nombre para obtener una subcadena de una cadena más grande.
 ! ¿Cúal es la idea? Dada una cadena, una posición incial y una longitud,
 devuelve una nueva cadena que contiene solo esa parte.

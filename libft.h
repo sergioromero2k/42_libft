@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: serromer <serromer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:03:10 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/04 12:11:57 by serromer         ###   ########.fr       */
+/*   Updated: 2025/10/09 17:29:18 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdint.h>
 
 // Part 1
 // Declaraciones (firma) de funciones
