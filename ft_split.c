@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 20:31:26 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/04 09:20:57 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/09 19:39:19 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	arr = (char **)ft_calloc(sizeof(char *), ft_count_words(s, c) + 1);
+	arr = (char **)ft_calloc(ft_count_words(s, c) + 1, sizeof(char *));
 	if (!s || !arr)
 		return (NULL);
 	while (s[i])
