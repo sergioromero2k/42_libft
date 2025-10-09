@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 17:37:42 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/09 17:23:07 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/09 19:30:45 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	size_t	len_s;
+	size_t	i;
 	char	*str;
 
 	if (!s)
@@ -23,13 +23,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	len_s = ft_strlen(s);
 	if (start >= len_s)
 		return (ft_calloc(1, 1));
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
-	str = (char *)malloc((len + 1) * (sizeof(char)));
+	if (len > len_s - start)
+		len = len_s - start;
+	str = (char *)malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	if (len_s - start < len)
-		len = len_s - start;
 	i = 0;
 	while (i < len && s[start + i])
 	{

@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:58:35 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/08 19:43:13 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/09 19:33:59 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	ft_src = (const unsigned char *)src;
 	if (src < dest)
 	{
-		// Evitar solapamiento (overlaping)
 		i = n;
 		while (i--)
 			ft_dest[i] = ft_src[i];

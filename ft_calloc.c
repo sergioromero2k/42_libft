@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 10:21:50 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/09 17:29:24 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/09 19:33:48 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if(nmemb !=0 && size >(SIZE_MAX / nmemb))
-		return NULL;
-
+	if (nmemb != 0 && size > (SIZE_MAX / nmemb))
+		return (NULL);
 	ptr = malloc(nmemb * size);
 	if (ptr == NULL)
 		return (ptr);
