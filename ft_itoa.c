@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 19:35:38 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/03 19:40:59 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/09 18:27:22 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ char	*ft_itoa(int n)
 
 	len = ft_intlen(n);
 	nb = (long)n;
-	arr = (char *)ft_calloc(sizeof(char), ft_intlen(n) + 1);
+	arr = (char *)ft_calloc(ft_intlen(n) + 1, sizeof(char));
 	if (!arr)
 		return (NULL);
-	arr[len + 1] = 0;
+	arr[len] = 0;
 	if (nb < 0)
 	{
 		arr[0] = '-';
-		nb = nb * (-1);
+		nb = -nb;
 	}
 	while (len-- && arr[len] != '-')
 	{
