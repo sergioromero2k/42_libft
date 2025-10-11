@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 18:36:14 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/09 19:22:30 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/11 22:34:39 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	s1_new = (char *)s1;
 	s2_new = (char *)s2;
-	str = (char *)calloc(ft_strlen(s2) + ft_strlen(s1) + 1, 1);
+	str = (char *)ft_calloc(ft_strlen(s2) + ft_strlen(s1) + 1, 1);
 	if (!str)
 		return (NULL);
 	ft_strlcpy(str, s1, (ft_strlen(s1_new) + 1));

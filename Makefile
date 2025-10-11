@@ -14,7 +14,7 @@ AR= ar -rcs							# Crea biblioteca estatica, -r replace, -c create, -s index
 # Comodin wildcard
 all: $(NAME)						# Esto es lo que ejecuta make por defecto
 
-# $@ coge name y luego $^ coge sdfstodos los valores.
+# $@ coge name y luego $^ coge todos los valores.
 $(NAME):$(OBJ)	
 	$(AR) $(NAME) $(OBJ)
 #	$(CC) $(CFLAGS) -o $@ $^  
