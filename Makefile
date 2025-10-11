@@ -19,7 +19,7 @@ $(NAME):$(OBJ)
 	$(AR) $(NAME) $(OBJ)
 #	$(CC) $(CFLAGS) -o $@ $^  
 
-# Como los archivos .o no estan aun creados, los creara uno por uno con esta regla.
+# Como los archivos .o no estan aun creados, los creara uno por uno con esta regla.<<<
 %.o:%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
