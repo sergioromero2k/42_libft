@@ -9,6 +9,7 @@ OBJ=$(SRC:.c=.o)					# Luego se genera nombres de todos los .c por .o, solo gene
 RM=rm -f
 AR= ar -rcs							# Crea biblioteca estatica, -r replace, -c create, -s index
 
+
 # .SILENT:
 
 # Comodin wildcard
