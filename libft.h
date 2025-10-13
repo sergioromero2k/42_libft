@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:03:10 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/12 09:53:52 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/12 10:40:20 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <string.h>
 # include <unistd.h>
 
-// Estructura
+// Estructura de datos, tipo de datos compuestos
 typedef struct s_list
 {
 	void			*content;
