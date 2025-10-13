@@ -1,3 +1,4 @@
+```c
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -111,3 +112,4 @@ void insertFinal(struct ft_vacano ** head, int value){
         temp = temp -> next;
     temp->next=newMode;
 }
+```
