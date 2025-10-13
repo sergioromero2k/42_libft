@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 21:03:10 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/13 20:23:26 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/13 21:15:23 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void				ft_putnbr_fd(int n, int fd);
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);
+t_list				*ft_lstlast(t_list *lst);
 #endif
 
 /*

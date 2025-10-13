@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 20:05:50 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/13 20:29:16 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/13 21:07:25 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ int	ft_lstsize(t_list *lst)
 	free(num2);
 	free(num3);
 } */
-int	main(void)
+/* int	main(void)
 {
 	t_list *node = NULL;
 	printf("%d", ft_lstsize(node));
-}
+} */
