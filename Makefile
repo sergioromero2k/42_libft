@@ -6,7 +6,7 @@
 #    By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 21:31:32 by sergio-alej       #+#    #+#              #
-#    Updated: 2025/10/13 21:44:54 by sergio-alej      ###   ########.fr        #
+#    Updated: 2025/10/13 21:45:44 by sergio-alej      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ SRC_BONUS= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c\
 ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c\
 ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 OBJ_BONUS=$(SRC_BONUS:.c=.o)
-
 
 # .SILENT:
 

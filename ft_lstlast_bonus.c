@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 20:30:07 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/13 21:14:44 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/14 18:45:16 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst == NULL)
+	t_list	*res;
+
+	if (!lst)
 		return (NULL);
-	while (lst->next != NULL)
-	{
-		lst = lst->next;
-	}
-	return (lst);
+	res = lst;
+	while (res->next)
+		res = res->next;
+	return (res);
 }
 
 /* int	main(void)

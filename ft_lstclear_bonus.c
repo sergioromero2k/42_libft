@@ -1,27 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 20:05:50 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/14 18:20:44 by sergio-alej      ###   ########.fr       */
+/*   Created: 2025/10/14 16:33:32 by sergio-alej       #+#    #+#             */
+/*   Updated: 2025/10/14 17:34:56 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int	i;
+	t_list	*head;
+	t_list	*backup;
 
-	i = 0;
-	while (lst)
+	head = *lst;
+	if (!head || !del)
+		return ;
+	while (head)
 	{
-		i++;
-		lst = lst->next;
+		backup = head->next;
+		del(head->content);
+		free(head);
+		head = backup;
 	}
-	return (i);
+	*lst = NULL;
 }
 
+/* void del_str(void *ptr){
+	free(ptr);
+}
+int	main(void){
+	t_list *list=NULL;
+	t_list *nodo=malloc(sizeof(t_list));
+	char *str;
+
+	str=ft_strdup("Hola mundo");
+	nodo->content=str;
+	nodo->next=NULL;
+
+} */
