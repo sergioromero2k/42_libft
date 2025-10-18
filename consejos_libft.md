@@ -1,6 +1,6 @@
 # Consejos para entregar libft
 ---
-* No entregar el **makefile** con el atajo de **"wilcard", ni \*"** ya que te petara la maquina y te data el proyecto como ERROR! y te pondra -42.
+* No entregar el **makefile** con el atajo de **"wilcard", ni \*"** ya que te petara la maquina y te dara el proyecto como ERROR! y te pondra -42.
 * Tampoco poner comentarios(#) en el **makefile**, la moulinette te tirara el proyecto.
 * Leerte las normas de norminette (Muy importante).
 * Poner _bonus, a los nombres de funciones bonus, te lo pide.
