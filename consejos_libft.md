@@ -5,3 +5,4 @@
 * Poner _bonus, a los nombres de funciones bonus, te lo pide.
 * Haz los bonus, aprenderas a diferenciar entre array y listas, muy importante.
 * Tomate tu tiempo, para hacerlo, no te apresures, que al final es tu propia carrera, donde solo participas tú y nadie más.
+* i

@@ -6,7 +6,7 @@
 /*   By: sergio-alejandro <sergio-alejandro@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 20:31:26 by sergio-alej       #+#    #+#             */
-/*   Updated: 2025/10/09 19:39:19 by sergio-alej      ###   ########.fr       */
+/*   Updated: 2025/10/18 20:08:25 by sergio-alej      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ static int	ft_count_words(const char *s, int c)
 	}
 	return (count_words);
 }
+// aidadia,da,,,,ad,adaddd,dadd,,,,,,,,
+
 // aidadia,da,,,,ad,adaddd,dadd,,,,,,,,
 
 static int	ft_count_one_word(const char *s, int c)
@@ -62,8 +64,10 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (!s)
+		return (NULL);
 	arr = (char **)ft_calloc(ft_count_words(s, c) + 1, sizeof(char *));
-	if (!s || !arr)
+	if (!arr)
 		return (NULL);
 	while (s[i])
 	{
